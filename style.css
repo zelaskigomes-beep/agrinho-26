@@ -1,69 +1,114 @@
-/* Configurações Gerais */
+/* Variáveis de Cores e Estilos */
+:root {
+    --primary: #1b5e20;
+    --primary-light: #2e7d32;
+    --accent: #81c784;
+    --background: #f7fbf7;
+    --card-bg: #ffffff;
+    --text: #2c3e50;
+    --text-muted: #5a6c7d;
+}
+
+/* Configurações Globais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: #f4f9f4;
-    color: #333;
+    background-color: var(--background);
+    color: var(--text);
     line-height: 1.6;
 }
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 /* Cabeçalho */
-header {
-    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+.main-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: white;
-    padding: 40px 0;
+    padding: 60px 0;
     text-align: center;
-    border-bottom: 5px solid #81c784;
+    border-bottom: 6px solid var(--accent);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.badge {
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-header p {
-    font-size: 1.2rem;
-    font-style: italic;
+.main-header h1 {
+    font-size: 2.8rem;
+    margin: 15px 0 5px 0;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
     opacity: 0.9;
+    font-style: italic;
 }
 
-/* Conteúdo Principal */
-main {
-    padding: 40px 0;
+/* Grid de Conteúdo */
+.grid-container {
+    padding: 50px 0;
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid #2e7d32;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid var(--primary-light);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .card h2 {
-    color: #1b5e20;
+    color: var(--primary);
+    font-size: 1.5rem;
     margin-bottom: 12px;
 }
 
+.card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
 /* Rodapé */
-footer {
-    background-color: #1b5e20;
+.main-footer {
+    background-color: var(--primary);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     margin-top: 40px;
-    font-size: 0.9rem;
 }
+
+.main-footer .meta {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
